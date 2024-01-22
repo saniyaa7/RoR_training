@@ -97,7 +97,100 @@ my_instance = MyClass.new("Hello")
 my_instance.my_variable = "World"
 puts my_instance.my_variable
 
-#6.
+#Inheritence
+class Animal
+  def speak
+    puts "Animal speaks"
+  end
+end
+
+class Dog < Animal
+  def bark
+    puts "Dog barks"
+  end
+end
+
+class Cat < Animal
+  def meow
+    puts "Cat meows"
+  end
+end
+
+dog = Dog.new
+dog.speak   # Output: Animal speaks
+dog.bark    # Output: Dog barks
+
+cat = Cat.new
+cat.speak   # Output: Animal speaks
+cat.meow    # Output: Cat meows
+
+#Polymorphism
+class Dog
+  def speak
+    "Woof!"
+  end
+end
+
+class Cat
+  def speak
+    "Meow!"
+  end
+end
+
+class Cow
+  def speak
+    "Moo!"
+  end
+end
+
+# A generic function that can take any object with a 'speak' method
+def make_speak(animal)
+  puts animal.speak
+end
+
+# Creating instances of different classes
+dog = Dog.new
+cat = Cat.new
+cow = Cow.new
+
+# Calling the make_speak method with different objects
+make_speak(dog)  # Outputs: Woof!
+make_speak(cat)  # Outputs: Meow!
+make_speak(cow)  # Outputs: Moo!
+
+#encapsulation
+# Ruby program to illustrate encapsulation 
+#!/usr/bin/ruby 
+	
+class Demoencapsulation 
+		
+def initialize(id, name, addr) 
+		
+# Instance Variables	 
+@cust_id = id 
+@cust_name = name 
+@cust_addr = addr 
+end
+	
+# displaying result 
+def display_details() 
+puts "Customer id: #@cust_id"
+puts "Customer name: #@cust_name"
+puts "Customer address: #@cust_addr"
+end
+end
+	
+# Create Objects 
+cust1 = Demoencapsulation .new("1", "Mike", 
+			"Wisdom Apartments, Ludhiya") 
+
+cust2 = Demoencapsulation .new("2", "Jackey", 
+				"New Empire road, Khandala") 
+	
+# Call Methods 
+cust1.display_details() 
+cust2.display_details() 
+
 
 
 
