@@ -19,11 +19,11 @@ end
 
 
 class College < University
-  def initialize(clg_name, clg_city, university_name, university_city)
+  def initialize(college_name, college_city, university_name, university_city)
   #super() is called to call College Parameterized Constructor
     super(university_name, university_city)
-    @clg_name = clg_name
-    @clg_city = clg_city
+    @college_name = college_name
+    @college_city = college_city
   end
 
 #Overidding detail method
@@ -31,8 +31,8 @@ class College < University
  #super call to call detail method of University
     super
     puts "\nCollege Details: "
-    puts "College name: #{@clg_name}"
-    puts "College City: #{@clg_city}"
+    puts "College name: #{@college_name}"
+    puts "College City: #{@college_city}"
   end
 
   def schedule
@@ -48,7 +48,7 @@ end
 
 
 class Student < College
-  def initialize(name, age, degree, percentage, clg_name, clg_city, university_name, university_city)
+  def initialize(name, age, degree, percentage, college_name, college_city, university_name, university_city)
   #super() is called to call College Parameterized Constructor
     super(clg_name, clg_city, university_name, university_city)
     @name = name
@@ -83,25 +83,25 @@ degree = gets.chomp  # Fix the typo here
 puts "Percentage: "
 percent = gets.chomp.to_i
 puts "College name: "
-clg_name = gets.chomp
+college_name = gets.chomp
 puts "College City: "
-clg_city = gets.chomp
+college_city = gets.chomp
 puts "University name: "
-univ_name = gets.chomp
+university_name = gets.chomp
 puts "University City: "
-univ_city = gets.chomp
+university_city = gets.chomp
 
 #Overide method is called resolved using super
-stud = Student.new(name, age, degree, percent, clg_name, clg_city, univ_name, univ_city)  # Fix the class name here
+student = Student.new(name, age, degree, percent, college_name, college_city, university_name, university_city)  # Fix the class name here
 puts "\nGet the detail of Student: "
-stud.detail
+student.detail
 
 #inhertited superclass College method
 puts "\nGet College Schedule and Exam information"
-stud.schedule
-stud.internalExams
+student.schedule
+student.internalExams
 
 
 #inhertited superclass University method
 puts "\nGet University Exam information"
-stud.finalExams
+student.finalExams
