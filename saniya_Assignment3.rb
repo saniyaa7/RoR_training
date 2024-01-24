@@ -1,18 +1,18 @@
 #1.Initlize class
 class Student
- def initialize(name="Saniya",age=20,degree="B.tech")
+ def initialize(name = "Saniya",age = 20,degree = "B.tech")
    @name=name
    @age=age
  end
 
  def display
-   puts "Hi My name is #{@name} and my age is #{@age} pursuing
+   puts "Hi My name is #{@name} and my age is #{@age} pursuing"
  
  end
 end
 
-stud=Student.new
-stud.display
+student=Student.new
+student.display
 
 
 #2.Instance Method
@@ -61,9 +61,9 @@ class MyClass
 end
 
 a=MyClass.new
-a.public_methos
-a.protected_method
-a.private_method
+a.public_method
+#a.protected_method  giving error
+#a.private_method   giving error
 
 
 
@@ -167,29 +167,29 @@ class Demoencapsulation
 def initialize(id, name, addr) 
 		
 # Instance Variables	 
-@cust_id = id 
-@cust_name = name 
-@cust_addr = addr 
+@customer_id = id 
+@customer_name = name 
+@customer_addr = addr 
 end
 	
 # displaying result 
 def display_details() 
-puts "Customer id: #@cust_id"
-puts "Customer name: #@cust_name"
-puts "Customer address: #@cust_addr"
+puts "Customer id: #@customer_id"
+puts "Customer name: #@customer_name"
+puts "Customer address: #@customer_addr"
 end
 end
 	
 # Create Objects 
-cust1 = Demoencapsulation .new("1", "Mike", 
+customer1 = Demoencapsulation .new("1", "Mike", 
 			"Wisdom Apartments, Ludhiya") 
 
-cust2 = Demoencapsulation .new("2", "Jackey", 
+customer2 = Demoencapsulation .new("2", "Jackey", 
 				"New Empire road, Khandala") 
 	
 # Call Methods 
-cust1.display_details() 
-cust2.display_details() 
+customer1.display_details() 
+customer2.display_details() 
 
 
 
