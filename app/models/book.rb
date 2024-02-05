@@ -1,7 +1,6 @@
 class Book < ApplicationRecord
     validates :book_title, :book_name,presence: true
-    before_validation :normalize, on: [:create,:update]
-    
+    before_validation :normalize, on: [:create,:update ]
     has_many :borrowings
     has_many :transactions
     has_many :book_statuses

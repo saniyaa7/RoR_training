@@ -3,7 +3,6 @@ class Staff < ApplicationRecord
     validates :phone, length: { is: 10}
     validates :phone, numericality: true
     before_validation :normalize, on: [:create,:update]
-
     has_many :books
     has_many :reports
     has_many :keep_tracks
