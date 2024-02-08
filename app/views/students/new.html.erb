@@ -1,0 +1,35 @@
+<h1>Create Student</h1>
+<%= form_for(@student) do |f| %>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :gender %>
+    <%= f.select :gender, options_for_select(['Male', 'Female', 'Other']) %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+  <br>
+  <%= f.submit 'Create' %>
+  <%= link_to 'Back', students_path %> 
+<% end %>

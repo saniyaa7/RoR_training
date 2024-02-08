@@ -1,0 +1,32 @@
+<% if @students.blank? %>
+  <p>There are no students currently in the system.</p>
+<% else %>
+  <div class="container">
+    <h2>Current Students</h2>
+    <ul class="list-group">
+      <% @students.each do |student| %>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <h4><%= link_to "#{student.last_name}, #{student.first_name}", student_path(student) %></h4>
+              <p><strong>Age:</strong> <%= student.age %></p>
+              <p><strong>Address:</strong> <%= student.address %></p>
+              <p><strong>Phone:</strong> <%= student.phone %></p>
+            </div>
+            <div class="col-md-6 text-right">
+              <%= button_to "Edit", edit_student_path(student), method: :get, class: "btn btn-primary" %>
+              <%= button_to "Delete", student_path(student), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", style: "margin-left: 5px;" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="container">
+  <p>
+    <%= link_to "Add new student", new_student_path, class: "btn btn-success" %>
+    
+  </p>
+</div>
